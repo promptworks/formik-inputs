@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Formik, Form } from "formik";
 import { SubmitButton } from "../src";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 
 const onSubmit = () => Promise.resolve();
 const renderFormik = (children: React.ReactNode, opts: any = {}) => {
   const { getByRole } = render(
     <Formik onSubmit={onSubmit} initialValues={{}} {...opts}>
-      <Form>{children}</Form>
+      <Form role="form">{children}</Form>
     </Formik>
   );
 
@@ -23,31 +23,40 @@ describe("<SubmitButton />", () => {
   });
 
   describe("when invalid", () => {
-    it("is disabled", () => {
+    it("is disabled", async () => {
       const { form, button } = renderFormik(<SubmitButton />, {
         initialErrors: { foo: "bar" }
       });
 
       fireEvent.submit(form);
-      expect(button.getAttribute("disabled")).not.toBeNull();
+
+      await waitFor(() => {
+        expect(button.getAttribute("disabled")).not.toBeNull();
+      });
     });
   });
 
   describe("when submitting", () => {
-    it("is disabled", () => {
+    it("is disabled", async () => {
       const { button, form } = renderFormik(<SubmitButton />);
 
       fireEvent.submit(form);
-      expect(button.getAttribute("disabled")).not.toBeNull();
+
+      await waitFor(() => {
+        expect(button.getAttribute("disabled")).not.toBeNull();
+      });
     });
 
-    it("shows submitting label", () => {
+    it("shows submitting label", async () => {
       const { button, form } = renderFormik(
         <SubmitButton submitting="Submitting..." />
       );
 
       fireEvent.submit(form);
-      expect(button.textContent).toEqual("Submitting...");
+
+      await waitFor(() => {
+        expect(button.textContent).toEqual("Submitting...");
+      });
     });
   });
 });
