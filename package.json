@@ -8,8 +8,6 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "unpkg": "dist/index.umd.js",
-  "umd:main": "dist/index.umd.js",
   "files": [
     "src",
     "dist"
@@ -17,7 +15,7 @@
   "scripts": {
     "test": "jest",
     "clean": "rm -rf dist",
-    "build": "microbundle --format es,cjs,umd --jsx React.createElement"
+    "build": "microbundle --jsx React.createElement --globals react-baseline-inputs=ReactBaselineInputs --name FormikInputs"
   },
   "jest": {
     "preset": "ts-jest",
@@ -42,7 +40,7 @@
     "@types/react-dom": "^16.9.5",
     "formik": "^2.1.4",
     "jest": "^25.2.3",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.12.0-next.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "ts-jest": "^25.2.1",
