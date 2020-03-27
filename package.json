@@ -15,7 +15,9 @@
   "scripts": {
     "test": "jest",
     "clean": "rm -rf dist",
-    "build": "microbundle --jsx React.createElement --globals react-baseline-inputs=ReactBaselineInputs --name FormikInputs"
+    "build": "microbundle --jsx React.createElement --globals react-baseline-inputs=ReactBaselineInputs --name FormikInputs",
+    "format": "prettier --write '{src,test}/**/*.{js,ts,tsx}'",
+    "format:check": "prettier --check '{src,test}/**/*.{js,ts,tsx}'"
   },
   "jest": {
     "preset": "ts-jest",
