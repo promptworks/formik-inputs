@@ -16,7 +16,7 @@ import {
   SelectProps as BSelectProps,
   TextAreaProps as BTextAreaProps,
   TimeInputProps as BTimeInputProps,
-  ToggleButtonProps as BToggleButtonProps
+  ToggleButtonProps as BToggleButtonProps,
 } from "react-baseline-inputs";
 
 export interface FieldConfig {

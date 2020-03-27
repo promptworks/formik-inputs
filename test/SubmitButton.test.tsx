@@ -25,7 +25,7 @@ describe("<SubmitButton />", () => {
   describe("when invalid", () => {
     it("is disabled", async () => {
       const { form, button } = renderFormik(<SubmitButton />, {
-        initialErrors: { foo: "bar" }
+        initialErrors: { foo: "bar" },
       });
 
       fireEvent.submit(form);
