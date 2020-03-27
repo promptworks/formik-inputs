@@ -5,6 +5,7 @@ import { FieldConfig } from "./types";
 export const useField = <T extends FieldConfig>({
   name,
   validate,
+  showErrorOnBlur,
   ...props
 }: T) => {
   const [field, meta] = useFormikField<any>({ name, validate });
@@ -14,13 +15,15 @@ export const useField = <T extends FieldConfig>({
     setFieldValue
   ]);
 
+  const isErrorVisible = showErrorOnBlur ? meta.touched : submitCount > 0;
+
   return {
     name,
     onChange,
     onBlur: field.onBlur,
     value: field.value,
     touched: meta.touched,
-    error: submitCount > 0 ? meta.error : undefined,
+    error: isErrorVisible ? meta.error : undefined,
     ...props
   };
 };

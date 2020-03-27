@@ -22,6 +22,7 @@ import {
 export interface FieldConfig {
   name: string;
   validate?: FieldValidator;
+  showErrorOnBlur?: boolean;
 }
 
 type AsFormik<T> = FieldConfig &
