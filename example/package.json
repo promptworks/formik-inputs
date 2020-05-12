@@ -7,7 +7,7 @@
     "start": "parcel index.html"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.5.0",
     "formik-inputs": "../",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
