@@ -1309,13 +1309,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-text-mask@^5.4.6":
-  version "5.4.6"
-  resolved "https://registry.yarnpkg.com/@types/react-text-mask/-/react-text-mask-5.4.6.tgz#3a81e9de472beb939038e78cb16d737ae94ba14a"
-  integrity sha512-0KkER9oXZY/v1x8aoMTHwANlWnKT5tnmV7Zz+g81gBvcHRtcIHotcpY4KgWRwx0T5JMcsYmEh7wGOz0lwdONew==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react@*", "@types/react@^16.9.26":
   version "16.9.35"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.35.tgz#a0830d172e8aadd9bd41709ba2281a3124bbd368"
@@ -5068,7 +5061,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.6, prop-types@^15.6.2:
+prop-types@^15.6.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5105,13 +5098,10 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
-react-baseline-inputs@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-baseline-inputs/-/react-baseline-inputs-2.2.0.tgz#507ff036c82923a5dd8f0528e22b3b67e0b2c584"
-  integrity sha512-uTbUFUPX/lBUaMuvLGxf6Gl7LNe1L24C5Zdrmi/WnI4PYN8wPJi4mGM0mck0+GQLQcwZcQJBXTNlHDj9H/qoYQ==
-  dependencies:
-    "@types/react-text-mask" "^5.4.6"
-    react-text-mask "^5.4.3"
+react-baseline-inputs@^3.0.0-rc.0:
+  version "3.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/react-baseline-inputs/-/react-baseline-inputs-3.0.0-rc.0.tgz#e6a1bfaba5b5361c9f50c826c9b563429df1c22f"
+  integrity sha512-beNkxFodJ6tMWfEUH3rz72z4rJGoI8sfFDkawKk23iecE3AYSY3KAV+/aFYqM+r5ylg8P+ysUsVkpE9g1+r7PQ==
 
 react-dom@^16.13.1:
   version "16.13.1"
@@ -5132,13 +5122,6 @@ react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-text-mask@^5.4.3:
-  version "5.4.3"
-  resolved "https://registry.yarnpkg.com/react-text-mask/-/react-text-mask-5.4.3.tgz#991efb4299e30c2e6c2c46d13f617169463e0d2d"
-  integrity sha1-mR77QpnjDC5sLEbRP2FxaUY+DS0=
-  dependencies:
-    prop-types "^15.5.6"
 
 react@^16.13.1:
   version "16.13.1"
