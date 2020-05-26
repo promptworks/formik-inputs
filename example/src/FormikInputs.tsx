@@ -13,7 +13,6 @@ import {
   FloatInput,
   Input,
   IntegerInput,
-  MaskedInput,
   RadioGroup,
   Select,
   TextArea,
@@ -66,15 +65,6 @@ export const FormikInputs = () => {
                   name="select"
                   label="Select"
                   options={["One", "Two", "Three"]}
-                />
-              </div>
-
-              <div className="col-4">
-                <MaskedInput
-                  label="Masked"
-                  name="masked"
-                  showMask
-                  mask={telephoneMask}
                 />
               </div>
             </div>
