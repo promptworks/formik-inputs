@@ -24,6 +24,6 @@ test("exports", () => {
     "bootstrapTheme",
     "defaultTheme",
     "useField",
-    "useTheme",
+    "useTheme"
   ]);
 });

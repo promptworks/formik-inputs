@@ -11,12 +11,11 @@ import {
   FloatInputProps as BFloatInputProps,
   InputProps as BInputProps,
   IntegerInputProps as BIntegerInputProps,
-  MaskedInputProps as BMaskedInputProps,
   RadioGroupProps as BRadioGroupProps,
   SelectProps as BSelectProps,
   TextAreaProps as BTextAreaProps,
   TimeInputProps as BTimeInputProps,
-  ToggleButtonProps as BToggleButtonProps,
+  ToggleButtonProps as BToggleButtonProps
 } from "react-baseline-inputs";
 
 export interface FieldConfig {
@@ -39,7 +38,6 @@ export type FileListInputProps = AsFormik<BFileListInputProps>;
 export type FloatInputProps = AsFormik<BFloatInputProps>;
 export type InputProps = AsFormik<BInputProps>;
 export type IntegerInputProps = AsFormik<BIntegerInputProps>;
-export type MaskedInputProps = AsFormik<BMaskedInputProps>;
 export type RadioGroupProps = AsFormik<BRadioGroupProps>;
 export type SelectProps = AsFormik<BSelectProps>;
 export type TextAreaProps = AsFormik<BTextAreaProps>;

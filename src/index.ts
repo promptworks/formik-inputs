@@ -9,5 +9,5 @@ export {
   ThemeProvider,
   bootstrapTheme,
   defaultTheme,
-  useTheme,
+  useTheme
 } from "react-baseline-inputs";

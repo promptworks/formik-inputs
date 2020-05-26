@@ -10,9 +10,9 @@ export const useField = <T extends FieldConfig>({
 }: T) => {
   const [field, meta] = useFormikField<any>({ name, validate });
   const { setFieldValue, submitCount } = useFormikContext<any>();
-  const onChange = useCallback((value) => setFieldValue(name, value), [
+  const onChange = useCallback(value => setFieldValue(name, value), [
     name,
-    setFieldValue,
+    setFieldValue
   ]);
 
   const isErrorVisible = showErrorOnBlur ? meta.touched : submitCount > 0;
@@ -24,6 +24,6 @@ export const useField = <T extends FieldConfig>({
     value: field.value,
     touched: meta.touched,
     error: isErrorVisible ? meta.error : undefined,
-    ...props,
+    ...props
   };
 };
