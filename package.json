@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "formik-inputs",
-  "version": "4.0.0-rc.1",
+  "version": "4.0.0-rc.2",
   "repository": "https://github.com/promptworks/formik-inputs",
   "description": "React components for creating data-driven forms using Formik.",
   "main": "dist/index.js",
