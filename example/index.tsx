@@ -78,7 +78,7 @@ const App = () => {
 
                 <div className="row">
                   <div className="col-md">
-                    <Input label="Text" name="text" />
+                    <Input label="Text" name="text" validate={required} />
                   </div>
 
                   <div className="col-md">
@@ -87,11 +87,16 @@ const App = () => {
                       options={["A", "B"]}
                       placeholder="Choose an option"
                       name="select"
+                      validate={required}
                     />
                   </div>
                 </div>
 
-                <TextArea label="Comments" name="textarea" />
+                <TextArea
+                  label="Comments"
+                  name="textarea"
+                  validate={required}
+                />
               </fieldset>
 
               <fieldset className="mb-4">

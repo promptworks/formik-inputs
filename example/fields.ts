@@ -12,8 +12,8 @@ import {
 } from "../src";
 
 interface ThemeProps {
-  valid?: boolean;
-  invalid?: boolean;
+  touched?: boolean;
+  error?: React.ReactNode;
 }
 
 const theme = {
@@ -24,8 +24,8 @@ const theme = {
 };
 
 const className = {
-  "is-valid": (props: ThemeProps) => props.valid,
-  "is-invalid": (props: ThemeProps) => props.invalid
+  "is-valid": (props: ThemeProps) => props.touched && !props.error,
+  "is-invalid": (props: ThemeProps) => props.touched && props.error
 };
 
 export const Input = createInput<ThemeProps>({
