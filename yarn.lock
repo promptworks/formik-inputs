@@ -4843,9 +4843,9 @@ qs@~6.5.2:
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
 react-baseline-inputs@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-baseline-inputs/-/react-baseline-inputs-3.0.0.tgz#b3589a0269dd1d9df49e089eaa824e64683ed420"
-  integrity sha512-aH2FDcFiovGSoZOGbnI9wRp6SJCeBbUHUIzkfzJA+SV4RUnmd3Vo1/m1g47ecBet+V8/eO+B+N6UAKW2s6/5fQ==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-baseline-inputs/-/react-baseline-inputs-3.2.0.tgz#feea232d6d0dbfd1e91eccbd1cf8ccb1fc62d9a9"
+  integrity sha512-h4UZS6Bmx/KrtVYYJnWpQGCX4O/a/u/dNMd8arljoVlertGijXKBey/FgdMyfKThroKsu8eKPLee6X6TTvHX9A==
 
 react-dom@^16.13.1:
   version "16.13.1"
