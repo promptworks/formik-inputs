@@ -1,80 +1,72 @@
+import { ClassName, FieldProps } from "react-baseline-inputs";
 import {
+  FormikThemeProps,
   createCheckbox,
-  createCheckboxItem,
-  createFieldSet,
   createFileInput,
   createFileListInput,
+  createGroup,
   createInput,
-  createRadio,
+  createItem,
   createSelect,
   createTextArea,
   createToggleButton
 } from "../src";
 
-interface ThemeProps {
-  touched?: boolean;
-  error?: React.ReactNode;
-}
-
 const theme = {
-  props: ["valid", "invalid"],
   helpClassName: "form-text text-muted",
   errorClassName: "invalid-feedback",
   fieldClassName: "form-group"
 };
 
-const className = {
-  "is-valid": (props: ThemeProps) => props.touched && !props.error,
-  "is-invalid": (props: ThemeProps) => props.touched && props.error
+const className: ClassName<FieldProps & FormikThemeProps> = {
+  "is-valid": props => props.touched && !props.error,
+  "is-invalid": props => props.touched && props.error
 };
 
-export const Input = createInput<ThemeProps>({
+export const Input = createInput({
   ...theme,
   className: { ...className, "form-control": true }
 });
 
-export const FileInput = createFileInput<ThemeProps>({
+export const FileInput = createFileInput({
   ...theme,
   className: { ...className, "form-control-file": true }
 });
 
-export const FileListInput = createFileListInput<ThemeProps>({
+export const FileListInput = createFileListInput({
   ...theme,
   className: { ...className, "form-control-file": true }
 });
 
-export const Select = createSelect<ThemeProps>({
+export const Select = createSelect({
   ...theme,
   className: { ...className, "custom-select": true }
 });
 
-export const TextArea = createTextArea<ThemeProps>({
+export const TextArea = createTextArea({
   ...theme,
   className: { ...className, "form-control": true }
 });
 
-export const Radio = createRadio<ThemeProps>({
-  ...theme,
-  labelClassName: "custom-control-label",
-  fieldClassName: "custom-control custom-radio",
-  className: { ...className, "custom-control-input": true }
-});
-
-export const Checkbox = createCheckbox<ThemeProps>({
+export const Checkbox = createCheckbox({
   ...theme,
   labelClassName: "custom-control-label",
   fieldClassName: "form-group custom-control custom-checkbox",
   className: { ...className, "custom-control-input": true }
 });
 
-export const CheckboxItem = createCheckboxItem<ThemeProps>({
+export const Item = createItem({
   ...theme,
   labelClassName: "custom-control-label",
-  fieldClassName: "custom-control custom-checkbox",
-  className: { ...className, "custom-control-input": true }
+  className: { ...className, "custom-control-input": true },
+  fieldClassName: {
+    "custom-control": true,
+    "custom-checkbox": props => props.type === "checkbox",
+    "custom-radio": props => props.type === "radio"
+  }
 });
 
-export const ToggleButton = createToggleButton<ThemeProps>({
+export const ToggleButton = createToggleButton({
   ...theme,
   className: {
     "btn btn-sm btn-outline-primary mr-2": true,
@@ -82,7 +74,10 @@ export const ToggleButton = createToggleButton<ThemeProps>({
   }
 });
 
-export const FieldSet = createFieldSet({
+export const Group = createGroup({
   helpClassName: "form-text text-muted",
-  errorClassName: "text-danger"
+  errorClassName: {
+    "text-danger": true,
+    "d-none": props => !props.touched
+  }
 });

@@ -4,34 +4,23 @@ import * as ReactDOM from "react-dom";
 import { Formik, Form, useFormikContext } from "formik";
 import {
   Checkbox,
-  CheckboxItem,
-  FieldSet,
   FileInput,
   FileListInput,
+  Group,
   Input,
-  Radio,
+  Item,
   Select,
   TextArea,
   ToggleButton
 } from "./fields";
-
-interface Person {
-  name: string;
-}
-
-const people: Person[] = [
-  { name: "Guy Fietti" },
-  { name: "Abe Lincoln" },
-  { name: "Oprah Winfrey" }
-];
 
 interface Values {
   text: string;
   select: string;
   textarea: string;
   checkbox: boolean;
-  checkboxes: Person[];
-  radio: Person | null;
+  checkboxes: string[];
+  radio: number | null;
   toggle: boolean;
   file: File | null;
   files: FileList | null;
@@ -83,12 +72,15 @@ const App = () => {
 
                   <div className="col-md">
                     <Select
-                      label="Select"
-                      options={["A", "B"]}
-                      placeholder="Choose an option"
                       name="select"
+                      label="Select"
+                      placeholder="Choose an option"
                       validate={required}
-                    />
+                    >
+                      <option value="Milk">Milk</option>
+                      <option value="Cheese">Cheese</option>
+                      <option value="Eggs">Eggs</option>
+                    </Select>
                   </div>
                 </div>
 
@@ -130,31 +122,29 @@ const App = () => {
               </fieldset>
 
               <div className="row mb-4">
-                <div className="col-md">
-                  <FieldSet name="checkboxes" legend="Multiple Checkboxes">
-                    {people.map(person => (
-                      <CheckboxItem
-                        key={person.name}
-                        label={person.name}
-                        represents={person}
-                        name="checkboxes"
-                      />
-                    ))}
-                  </FieldSet>
-                </div>
+                <Group
+                  name="checkboxes"
+                  type="checkbox"
+                  legend="Multiple Checkboxes"
+                  className="col-md"
+                  validate={notEmpty}
+                >
+                  <Item value="PHL" label="Philadelphia" />
+                  <Item value="CHI" label="Chicago" />
+                  <Item value="NYC" label="New York" />
+                </Group>
 
-                <div className="col-md">
-                  <FieldSet name="checkboxes" legend="Radio Group">
-                    {people.map(person => (
-                      <Radio
-                        key={person.name}
-                        label={person.name}
-                        represents={person}
-                        name="radio"
-                      />
-                    ))}
-                  </FieldSet>
-                </div>
+                <Group
+                  name="radio"
+                  type="radio"
+                  legend="Radio Group"
+                  className="col-md"
+                  validate={required}
+                >
+                  <Item value={1} label="Bacon" />
+                  <Item value={2} label="Cheetos" />
+                  <Item value={3} label="Waffles" />
+                </Group>
               </div>
 
               <button type="submit" className="btn btn-primary">
