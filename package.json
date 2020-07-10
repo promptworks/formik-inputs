@@ -31,12 +31,11 @@
     "react-baseline-inputs": "^4.0.0-alpha.4"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.0.1",
-    "@types/jest-axe": "^3.2.1",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "formik": "^2.1.4",
-    "jest-axe": "^3.4.0",
     "react": "^16.13.1",
     "react-baseline-inputs": "^4.0.0-alpha.4",
     "react-dom": "^16.13.1",

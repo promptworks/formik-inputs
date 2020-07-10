@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as Inputs from "react-baseline-inputs";
 import { FieldValidator, useField } from "formik";
+import { ItemProps } from "react-baseline-inputs";
 
 type InputCreator<P> = <T>(
   theme: Inputs.Theme<T, P>
@@ -51,12 +52,20 @@ function convert<P>(createBaselineField: InputCreator<P>) {
   };
 }
 
+export function createItem<T extends FormikThemeProps>(
+  theme: Inputs.Theme<T, ItemProps>
+) {
+  return Inputs.createItem({
+    ...theme,
+    props: [...(theme.props || []), "touched"]
+  });
+}
+
 export const createCheckbox = convert(Inputs.createCheckbox);
 export const createFileInput = convert(Inputs.createFileInput);
 export const createFileListInput = convert(Inputs.createFileListInput);
 export const createGroup = convert(Inputs.createGroup);
 export const createInput = convert(Inputs.createInput);
-export const createItem = Inputs.createItem;
 export const createSelect = convert(Inputs.createSelect);
 export const createTextArea = convert(Inputs.createTextArea);
 export const createToggleButton = convert(Inputs.createToggleButton);
@@ -66,7 +75,7 @@ export const FileInput = createFileInput({});
 export const FileListInput = createFileListInput({});
 export const Group = createGroup({});
 export const Input = createInput({});
-export const Item = Inputs.Item;
+export const Item = createItem({});
 export const Select = createSelect({});
 export const TextArea = createTextArea({});
 export const ToggleButton = createToggleButton({});
