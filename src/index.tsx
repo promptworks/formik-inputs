@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as Inputs from "react-baseline-inputs";
 import { FieldValidator, useField } from "formik";
-import { ItemProps } from "react-baseline-inputs";
 
 type InputCreator<P> = <T>(
   theme: Inputs.Theme<T, P>
@@ -53,7 +52,7 @@ function convert<P>(createBaselineField: InputCreator<P>) {
 }
 
 export function createItem<T extends FormikThemeProps>(
-  theme: Inputs.Theme<T, ItemProps>
+  theme: Inputs.Theme<T, Inputs.ItemProps>
 ) {
   return Inputs.createItem({
     ...theme,
